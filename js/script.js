@@ -1,22 +1,17 @@
 
-var button = document.querySelector('.button');
-button.onclick = function() {
-	var strnum = document.getElementById('arr').value.split(',');
-	var number = [];
-	for (var i = 0; i < strnum.length; i++) {
-		number.push(parseInt(strnum[i]));
+const button = document.querySelector('.button');
+button.onclick = () => {
+	const strnum = document.getElementById('arr').value.split(',');
+	let number = [];
+	for (let i = 0; i < strnum.length; i++) {
+		number.push(parseInt(strnum[i]));	
 	}
-	
-	var averge = function(numbers) {
-		var sumNum = 0;
-		for (var i = 0; i < numbers.length; i++) {
-			sumNum += numbers[i];
-		}
-		var averNum = sumNum/numbers.length;
-		result = '[' + averNum +']';
+	let sumNum = 0;
+	for (let i = 0; i < number.length; i++) {
+		sumNum += number[i];
 	}
-	var numbers = number;
-	console.log (averge(numbers));
+	let averNum = sumNum/number.length;
+	let result = '[' + averNum +']';
 	document.getElementById("result").innerHTML = result;
 }
 
